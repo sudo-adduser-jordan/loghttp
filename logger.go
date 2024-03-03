@@ -1,4 +1,4 @@
-package middleware
+package main
 
 import (
 	"fmt"
@@ -8,7 +8,7 @@ import (
 	"time"
 
 	"github.com/charmbracelet/lipgloss"
-	"github.com/sudo-adduser-jordan/go/styles"
+	"github.com/sudo-adduser-jordan/gcolor"
 )
 
 type statusRecorder struct {
@@ -31,7 +31,7 @@ func Logger(f http.HandlerFunc) http.HandlerFunc {
 				"| %s |	%s|	%s %s %s",
 				statusColor(record.status),
 				time.Since(start),
-				styles.GreenText(r.Host),
+				gcolor.GreenText(r.Host),
 				methodColor(r.Method),
 				r.URL.Path,
 			)
@@ -47,15 +47,15 @@ func statusColor(status int) lipgloss.Style {
 
 	switch status {
 	case 200:
-		return styles.GreenText(s)
+		return gcolor.GreenText(s)
 	case 300:
-		return styles.YellowText(s)
+		return gcolor.YellowText(s)
 	case 400:
-		return styles.BlueText(s)
+		return gcolor.BlueText(s)
 	case 500:
-		return styles.RedText(s)
+		return gcolor.RedText(s)
 	default:
-		return styles.RedText(s)
+		return gcolor.RedText(s)
 	}
 }
 
@@ -63,14 +63,14 @@ func methodColor(method string) lipgloss.Style {
 	s := fmt.Sprintf(" " + method + " ")
 	switch method {
 	case "GET":
-		return styles.BlueLabel(s)
+		return gcolor.BlueLabel(s)
 	case "POST":
-		return styles.GreenLabel(s)
+		return gcolor.GreenLabel(s)
 	case "PUT":
-		return styles.PurpleLabel(s)
+		return gcolor.PurpleLabel(s)
 	case "DELETE":
-		return styles.RedLabel(s)
+		return gcolor.RedLabel(s)
 	default:
-		return styles.RedText(s)
+		return gcolor.RedText(s)
 	}
 }
