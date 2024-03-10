@@ -3,8 +3,8 @@ module github.com/sudo-addduser-jordan/loghttp
 go 1.22.0
 
 require (
-	github.com/charmbracelet/lipgloss v0.9.1
-	github.com/sudo-adduser-jordan/gcolor v0.0.0-20240303073508-c6daa6637b02
+	github.com/charmbracelet/lipgloss v0.10.0
+	github.com/sudo-adduser-jordan/gcolor v0.0.1
 )
 
 require (
@@ -15,5 +15,5 @@ require (
 	github.com/muesli/reflow v0.3.0 // indirect
 	github.com/muesli/termenv v0.15.2 // indirect
 	github.com/rivo/uniseg v0.4.7 // indirect
-	golang.org/x/sys v0.17.0 // indirect
+	golang.org/x/sys v0.18.0 // indirect
 )
