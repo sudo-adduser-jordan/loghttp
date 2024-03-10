@@ -20,6 +20,7 @@ type statusRecorder struct {
 func (record *statusRecorder) WriteHeader(code int) {
 	record.status = code
 	record.ResponseWriter.WriteHeader(code)
+	
 }
 
 func Logger(f http.HandlerFunc) http.HandlerFunc {
