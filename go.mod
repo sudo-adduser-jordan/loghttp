@@ -1,4 +1,4 @@
-module github.com/sudo-addduser-jordan/logger
+module github.com/sudo-addduser-jordan/loghttp
 
 go 1.22.0
 
